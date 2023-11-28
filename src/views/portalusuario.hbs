@@ -1,0 +1,46 @@
+<style>
+   .circular-card {
+    width: 200px; /* Ajusta el tamaño según sea necesario */
+    height: 200px; /* Ajusta el tamaño según sea necesario */
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+
+   .circular-card .logo {
+    font-size: 36px; /* Tamaño del ícono */
+   }
+   .contenedor-horizontal {
+  display: flex; /* Hace que los elementos hijos se muestren en línea */
+}
+  </style>
+<h1 class="display-4">seccion usuario</h1>
+ <div class="contenedor-horizontal">
+
+  <div class="margen m-3">
+    <a href="/reservas" class="btn btn-outline-primary">
+      <div class="circular-card">
+        <div class="logo">
+          <i class="bi bi-buildings"></i>
+        </div>
+        <h5 class="mt-2">mis reservas</h5>
+      </div>
+    </a>
+  </div>
+
+  <div class="margen m-3">
+    <a href="/reservas/calendario-user" class="btn btn-outline-primary">
+      <div class="circular-card">
+        <div class="logo">
+          <i class="bi bi-buildings"></i>
+        </div>
+        <h5 class="mt-2">mi calendario</h5>
+      </div>
+    </a>
+  </div>
+</div>
+

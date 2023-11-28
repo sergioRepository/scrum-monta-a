@@ -1,0 +1,58 @@
+{{#each errors}}
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{text}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+{{/each}}
+
+<div class="col-md-4 mx-auto">
+  <div class="card">
+    <div class="card-header text-center">
+      <h3>Edit Alojamiento</h3>
+    </div>
+    <div class="card-body">
+      <form action="/alojamientos/edit-alojamiento/{{alojamiento._id}}?_method=PUT" method="POST">
+        <input type="hidden" name="_method" value="PUT" />
+        <div class="mb-3">
+          <label for="nombre">Nombre:</label>
+          <input
+            type="text"
+            name="nombre"
+            class="form-control"
+            value="{{alojamiento.nombre}}"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="tipo">Tipo:</label>
+          <input
+            type="text"
+            name="tipo"
+            class="form-control"
+            value="{{alojamiento.tipo}}"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="descripcion">Descripción:</label>
+          <textarea
+            name="descripcion"
+            class="form-control"
+          >{{alojamiento.descripcion}}</textarea>
+        </div>
+        <div class="mb-3">
+          <label for="precio">Precio:</label>
+          <input
+            type="number"
+            name="precio"
+            class="form-control"
+            value="{{alojamiento.precio}}"
+          />
+        </div>
+        <button class="btn btn-primary w-100" type="submit">
+          Save
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

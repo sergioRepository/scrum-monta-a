@@ -1,0 +1,48 @@
+ <br><br>
+  <a class="btn btn-primary" href="/portaladmin">regresar</a>
+  <br><br>
+<div class="row">
+   <a class="btn btn-primary" href="/reservas/add" role="button">+</a>
+   
+   <!-- Tabla para mostrar todas las reservas -->
+   <table class="table">
+      <thead>
+         <tr>
+            <th scope="col">Reserva ID</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Especificaciones</th>
+            <th scope="col">Alojamiento</th>
+            <th scope="col">Acciones</th>
+         </tr>
+      </thead>
+      <tbody>
+         {{#each reservas}}
+         <tr>
+            <td>{{ _id }}</td>
+            <td>{{ fecha }}</td>
+            <td>{{ especificaciones }}</td>
+            <td>{{ alojamiento }}</td>
+            <td>
+               <a href="/reservas/edit/{{_id}}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+               <!-- DELETE REQUEST -->
+               <form action="/reservas/delete/{{_id}}?_method=DELETE" method="POST" style="display: inline;">
+                  <input type="hidden" name="_method" value="DELETE">
+                  <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+               </form>
+            </td>
+         </tr>
+         {{else}}
+         <tr>
+            <td colspan="5">
+               <div class="card mx-auto">
+                  <div class="card-body">
+                     <p class="lead">There are no Reservas yet.</p>
+                     <a href="/reservas/add" class="btn btn-success btn-block">Create One!</a>
+                  </div>
+               </div>
+            </td>
+         </tr>
+         {{/each}}
+      </tbody>
+   </table>
+</div>

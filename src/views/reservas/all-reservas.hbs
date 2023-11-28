@@ -1,0 +1,37 @@
+<br><br>
+   <a class="btn btn-primary" href="/portalusuario" role="button">atras portal user</a>
+   <br><br>
+<div class="row">
+   <a class="btn btn-primary" href="/reservas/add" role="button">+</a>
+  {{#each reservas}}
+  
+  <div class="col-md-5">
+    
+    <div class="card">
+      <div class="card-body">
+       
+        <h4 class="card-title d-flex justify-content-between align-items-center">
+          Reserva ID: {{ _id }} <a href="/reservas/edit/{{_id}}"><i class="fas fa-edit"></i></a>
+        </h4>
+        <p>Fecha: {{ fecha }}</p>
+        <p>Especificaciones: {{ especificaciones }}</p>
+        <!-- Puedes mostrar información adicional relacionada con la reserva, como el nombre del usuario o del alojamiento si lo necesitas -->
+        <p>Alojamiento : {{ alojamiento}}</p>
+
+        <!-- DELETE REQUEST -->
+        <form action="/reservas/delete/{{_id}}?_method=DELETE" method="POST">
+          <input type="hidden" name="_method" value="DELETE">
+          <button type="submit" class="btn btn-danger btn-block btn-sm">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  {{else}}
+  <div class="card mx-auto">
+    <div class="card-body">
+      <p class="lead">There are no Reservas yet.</p>
+      <a href="/reservas/add" class="btn btn-success btn-block">Create One!</a>
+    </div>
+  </div>
+  {{/each}}
+</div>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Tu Vista con FullCalendar</title>
+
+   <!-- FullCalendar CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+
+   <!-- jQuery -->
+   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+   <!-- FullCalendar JS -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+</head>
+<body>
+   <br><br>
+   <a class="btn btn-primary" href="/portalusuario" role="button">atras portal user</a>
+   <br><br>
+<div class="row">
+
+
+   <!-- Contenedor del Calendario -->
+   <div id="calendar"></div>
+</div>
+
+
+<script>
+   $(document).ready(function () {
+      // Inicializar FullCalendar
+      $('#calendar').fullCalendar({
+         header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay'
+         },
+         events: [
+            // Aquí cargarías las reservas como eventos
+            {{#each reservas}}
+            {
+               title: 'Reserva ID: {{ _id }}',
+               start: '{{ fecha }}',
+               url: '/reservas/edit/{{_id}}'
+            },
+            {{/each}}
+         ]
+      });
+   });
+</script>
+
+</body>
+</html>

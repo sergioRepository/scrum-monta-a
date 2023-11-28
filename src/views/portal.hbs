@@ -1,0 +1,69 @@
+
+<style>
+   .circular-card {
+    width: 200px; /* Ajusta el tamaño según sea necesario */
+    height: 200px; /* Ajusta el tamaño según sea necesario */
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+
+   .circular-card .logo {
+    font-size: 36px; /* Tamaño del ícono */
+   }
+   .contenedor-horizontal {
+  display: flex; /* Hace que los elementos hijos se muestren en línea */
+    body {
+      min-height: 100vh;
+      position: relative;
+      margin-bottom: 60px; /* Ajusta el margen inferior para que el contenido no se superponga con el footer */
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: #343a40; /* Color de fondo del footer */
+      color: #ffffff; /* Color del texto en el footer */
+      padding: 20px 0; /* Espaciado interno del footer */
+}
+  </style>
+<h1 class="display-4">seccion admin</h1>
+ <div class="contenedor-horizontal">
+  <div class="margen m-3">
+    <a href="/alojamientos" class="btn btn-outline-primary">
+      <div class="circular-card">
+        <div class="logo">
+          <i class="bi bi-buildings"></i>
+        </div>
+        <h5 class="mt-2">inventario</h5>
+      </div>
+    </a>
+  </div>
+
+  <div class="margen m-3">
+    <a href="/reservas/admin_reservas" class="btn btn-outline-primary">
+      <div class="circular-card">
+        <div class="logo">
+          <i class="bi bi-buildings"></i>
+        </div>
+        <h5 class="mt-2">pedidos</h5>
+      </div>
+    </a>
+  </div>
+
+  <div class="margen m-3">
+    <a href="/reservas/calendario-reservas" class="btn btn-outline-primary">
+      <div class="circular-card">
+        <div class="logo">
+          <i class="bi bi-buildings"></i>
+        </div>
+        <h5 class="mt-2">calendario</h5>
+      </div>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="col-md-4 mx-auto">
+  <div class="card">
+    <div class="card-header bg-dark text-center">
+      <h3 class="text-white">New Alojamiento</h3>
+    </div>
+    <div class="card-body text-right">
+      <form action="/alojamientos/new-alojamiento" method="POST">
+        <div class="mb-3">
+          <label for="nombre">Nombre:</label>
+          <input
+            type="text"
+            name="nombre"
+            class="form-control"
+            placeholder="Nombre"
+            autofocus
+          />
+        </div>
+        <div class="mb-3">
+          <label for="tipo">Tipo:</label>
+          <input
+            type="text"
+            name="tipo"
+            class="form-control"
+            placeholder="Tipo"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="descripcion">Descripción:</label>
+          <textarea
+            name="descripcion"
+            class="form-control"
+            placeholder="Descripción"
+          ></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="precio">Precio:</label>
+          <input
+            type="number"
+            name="precio"
+            class="form-control"
+            placeholder="Precio"
+          />
+        </div>
+        <button class="btn btn-primary w-100" type="submit">
+          Save
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
